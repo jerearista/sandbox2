@@ -21,4 +21,4 @@ if __name__ == '__main__':
     pprint.pprint(response[0])
 
 
-    print "The switch's system Management description is '{0}'".format(response[0]["interfaceDescriptions"]["Management1"]["description"])
+    print "The switch's system Management description is '{0}' and it is {1}/{2}.".format(response[0]["interfaceDescriptions"]["Management1"]["description"], response[0]["interfaceDescriptions"]["Management1"]["interfaceStatus"], response[0]["interfaceDescriptions"]["Management1"]["lineProtocolStatus"])
