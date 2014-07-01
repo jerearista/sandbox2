@@ -1,0 +1,17 @@
+[FORMAT]
+
+[BASIC]
+method-rgx=[a-z_][a-z0-9_]{2,50}$
+
+[MESSAGES CONTROL]
+
+[REPORTS]
+# Include message's id in output
+include-ids=yes
+
+# Tells wether to display a full report or only the messages
+reports=no
+
+[DESIGN]
+
+
