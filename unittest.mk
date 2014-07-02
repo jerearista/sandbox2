@@ -47,6 +47,10 @@ pylint:
 
 coverage:
 	coverage run --source=. -m FooNewTests
+	coverage report -m
+
+report:
+	coverage report -m
 
 coverageclean:
 	rm .coverage
