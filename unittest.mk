@@ -54,6 +54,9 @@ clicoverage:
 coverage:
 	nosetests --verbosity=3 -x --with-xunit --with-coverage --cover-erase --cover-html $(MODULES)
 
+report:
+	coverage report -m
+
 coverageclean:
 	rm -rf cover
 	rm .coverage

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
+#vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 """Release Note collector
 Created on 01 July 2014
@@ -18,7 +18,12 @@ def get_release_note(comments):
     for comment in comments:
         #pprint.pprint(comment)
         #print "**** Comment-{0}: {1}".format(i, comment['body'])
+        #print "**** Comment-{index}: {body}".format(
+        #    index=i,
+        #    body=comment['body']
+        #    )
         #print "\tURL: {0}".format(comment['html_url'])
+        #print "\tURL: {url}".format(url=comment['html_url'])
         #comment['body'].index('Changed make')
         if comment['body'].lower().find('changed make') >= 0:
             #print "Found 'Release Note'"
