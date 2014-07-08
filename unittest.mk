@@ -52,7 +52,7 @@ clicoverage:
 	@#coverage run --source=. -m FooNewTests
 
 coverage:
-	nosetests --verbosity=3 -x --with-xunit --with-coverage --cover-erase --cover-html $(MODULES)
+	nosetests --verbosity=3 -x --with-xunit --xunit-file=junit-report.xml --with-coverage --cover-erase --cover-html $(MODULES)
 
 report:
 	coverage report -m
