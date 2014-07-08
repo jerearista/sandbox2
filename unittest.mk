@@ -47,9 +47,12 @@ pylint:
 	find . -name \*.py | xargs pylint --ignore=conf.py,conf --rcfile .pylintrc
 	#find . -name \*.py | xargs pylint --rcfile .pylintrc
 
-coverage:
+clicoverage:
 	nosetests --with-coverage --cover-erase --cover-html $(MODULES)
 	@#coverage run --source=. -m FooNewTests
+
+coverage:
+	nosetests --verbosity=3 -x --with-xunit --with-coverage --cover-erase --cover-html $(MODULES)
 
 coverageclean:
 	rm -rf cover
