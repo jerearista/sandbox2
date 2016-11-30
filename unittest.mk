@@ -24,6 +24,8 @@ NAME = "Sandbox2"
 PYTHON = python
 TESTNAME = discover
 
+MODULES = "FooNewTests"
+
 # VERSION := $(shell cat VERSION)
 
 ########################################################
@@ -45,18 +47,22 @@ pylint:
 	find . -name \*.py | xargs pylint --ignore=conf.py,conf --rcfile .pylintrc
 	#find . -name \*.py | xargs pylint --rcfile .pylintrc
 
+clicoverage:
+	nosetests --with-coverage --cover-erase --cover-html $(MODULES)
+	@#coverage run --source=. -m FooNewTests
+
 coverage:
-	coverage run --source=. -m FooNewTests
-	coverage report -m
+	nosetests --verbosity=3 -x --with-xunit --xunit-file=junit-report.xml --with-coverage --cover-erase --cover-html $(MODULES)
 
 report:
 	coverage report -m
 
 coverageclean:
+	rm -rf cover
 	rm .coverage
 
 unittest:
-	PYTHONPATH=./ $(PYTHON) -m FooNewTests
+	PYTHONPATH=./ $(PYTHON) -m $(MODULES)
 
 distclean:
 	@echo "Cleaning up distutils stuff"
